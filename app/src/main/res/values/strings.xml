@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MovApp</string>
+
+    <string name="top_rated">Top Rated</string>
+    <string name="popular">Popular</string>
+    <string name="favorites">Favorites</string>
+
+    <string name="movie_backdrop_path_description">Movie backdrop image</string>
+    <string name="movie_poster_description">Movie poster description</string>
+    <string name="movie_poster_image_row">Movie poster thumbnail</string>
+
+    <string name="activity_detail_release_date">Release Date</string>
+    <string name="activity_detail_rating">Rating</string>
+    <string name="activity_detail_synopsis">Synopsis</string>
+
+    <string name="main_activity_sortBy_popular_movies">popular_movies</string>
+    <string name="main_activity_sortBy_top_rated_movies">top_rated_movies</string>
+</resources>
