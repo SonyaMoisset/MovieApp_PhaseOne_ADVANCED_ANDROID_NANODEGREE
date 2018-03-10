@@ -13,7 +13,6 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/navigation"
         android:animateLayoutChanges="true">
-
     </FrameLayout>
 
     <android.support.v7.widget.RecyclerView
@@ -34,5 +33,3 @@
         app:itemTextColor="@android:color/white"
         app:menu="@menu/bottom_navigation_items"/>
 </RelativeLayout>
-
-

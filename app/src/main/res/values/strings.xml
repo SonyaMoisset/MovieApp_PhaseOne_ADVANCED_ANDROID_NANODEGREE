@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">MovApp</string>
 
-    <string name="top_rated">Top Rated</string>
-    <string name="popular">Popular</string>
-    <string name="favorites">Favorites</string>
+    <string name="sortBy_top_rated">Top Rated</string>
+    <string name="sortBy_popular">Popular</string>
+    <string name="sortBy_favorites">Favorites</string>
 
     <string name="movie_backdrop_path_description">Movie backdrop image</string>
     <string name="movie_poster_description">Movie poster description</string>
@@ -15,4 +15,7 @@
 
     <string name="main_activity_sortBy_popular_movies">popular_movies</string>
     <string name="main_activity_sortBy_top_rated_movies">top_rated_movies</string>
+
+    <string name="message_obtain_api_key">Please obtain your API key from TheMovieDB website</string>
+    <string name="message_no_connectivity">There is no connectivity. Please turn on your WI-FI</string>
 </resources>

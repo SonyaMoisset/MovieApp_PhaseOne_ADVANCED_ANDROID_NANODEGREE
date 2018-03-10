@@ -7,7 +7,7 @@ import com.sonyamoisset.android.movieapp.MainActivity;
 import com.sonyamoisset.android.movieapp.R;
 import com.sonyamoisset.android.movieapp.adapter.MoviesAdapter;
 import com.sonyamoisset.android.movieapp.model.Movie;
-import com.sonyamoisset.android.movieapp.model.MoviesResponse;
+import com.sonyamoisset.android.movieapp.model.MoviesResult;
 
 import java.util.List;
 import java.util.Objects;
@@ -46,7 +46,7 @@ public class MoviesApiClient {
             MoviesApiInterface moviesApiInterface =
                     getClient().create(MoviesApiInterface.class);
 
-            Call<MoviesResponse> moviesResponse = null;
+            Call<MoviesResult> moviesResponse = null;
 
             if (Objects.equals(sortBy, mainActivity.getString(R.string.main_activity_sortBy_popular_movies))) {
                 moviesResponse =
@@ -58,11 +58,11 @@ public class MoviesApiClient {
             }
 
             if (moviesResponse != null) {
-                moviesResponse.enqueue(new Callback<MoviesResponse>() {
+                moviesResponse.enqueue(new Callback<MoviesResult>() {
 
                     @Override
-                    public void onResponse(@NonNull Call<MoviesResponse> call,
-                                           @NonNull Response<MoviesResponse> response) {
+                    public void onResponse(@NonNull Call<MoviesResult> call,
+                                           @NonNull Response<MoviesResult> response) {
                         List<Movie> movies = response.body().getResults();
                         mainActivity.recyclerView.setAdapter(
                                 new MoviesAdapter(mainActivity.getApplicationContext(), movies));
@@ -70,7 +70,7 @@ public class MoviesApiClient {
                     }
 
                     @Override
-                    public void onFailure(@NonNull Call<MoviesResponse> call,
+                    public void onFailure(@NonNull Call<MoviesResult> call,
                                           @NonNull Throwable t) {
                         t.printStackTrace();
                     }

@@ -2,8 +2,6 @@ package com.sonyamoisset.android.movieapp;
 
 import android.content.Context;
 import android.content.res.Configuration;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -25,6 +23,8 @@ import com.sonyamoisset.android.movieapp.model.Movie;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.sonyamoisset.android.movieapp.utils.NetworkConnectivity.isConnected;
+
 public class MainActivity extends AppCompatActivity {
 
     public RecyclerView recyclerView;
@@ -34,26 +34,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createBottomNavigationView();
-
-        if (isOnline()) {
+        if (isConnected(this)) {
             initViews();
+            createBottomNavigationView();
         } else {
-            Toast.makeText(this, "No Internet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.message_no_connectivity, Toast.LENGTH_LONG).show();
         }
-
-    }
-
-    private boolean isOnline() {
-        ConnectivityManager cm =
-                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        NetworkInfo netInfo = null;
-        if (cm != null) {
-            netInfo = cm.getActiveNetworkInfo();
-        }
-
-        return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
     private void createBottomNavigationView() {
@@ -117,32 +103,3 @@ public class MainActivity extends AppCompatActivity {
         MoviesApiClient.getMovies(this, getString(R.string.main_activity_sortBy_popular_movies));
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

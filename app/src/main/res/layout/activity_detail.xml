@@ -93,7 +93,6 @@
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_toEndOf="@+id/movie_poster"
                 android:textColor="@android:color/white"/>
-
         </RelativeLayout>
 
         <TextView
@@ -117,6 +116,5 @@
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:textColor="@android:color/white"/>
-
     </LinearLayout>
 </ScrollView>
