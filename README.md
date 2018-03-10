@@ -1,4 +1,4 @@
-# MovieApp
+# MovieApp | Part One
 An app that allows users to discover popular and top rated movies.
 
 ## Features
